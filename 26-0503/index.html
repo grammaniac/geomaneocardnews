@@ -1,1 +1,458 @@
-test
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>거만어 데일리 - 2026.05.03</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=IBM+Plex+Sans+KR:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mustard: #E8B43A;
+  --mustard-deep: #C9971F;
+  --navy: #0F1B3C;
+  --navy-soft: #1A2950;
+  --cream: #FAF6EE;
+  --paper: #F4EDDD;
+  --ink: #0A0F22;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:#fff;font-family:"IBM Plex Sans KR",sans-serif;color:var(--ink);}
+body{display:flex;flex-direction:column;align-items:center;}
+
+.card{
+  width:1080px;height:1350px;
+  position:relative;overflow:hidden;
+  background:var(--cream);
+  font-family:"IBM Plex Sans KR",sans-serif;
+}
+
+.side-brand{
+  position:absolute;left:30px;top:0;bottom:0;width:40px;
+  display:flex;align-items:center;justify-content:center;
+  z-index:5;pointer-events:none;
+}
+.side-brand .text{
+  transform:rotate(-90deg);white-space:nowrap;
+  font-family:"JetBrains Mono",monospace;
+  font-size:20px;font-weight:600;letter-spacing:0.4em;text-transform:uppercase;
+}
+.side-brand .text .accent{color:var(--mustard);font-weight:700;}
+.side-brand .text .sep{margin:0 16px;opacity:0.5;}
+.cover .side-brand .text{color:var(--cream);opacity:0.9;}
+.word .side-brand .text{color:var(--navy);opacity:0.7;}
+
+/* COVER */
+.card.cover{
+  background:var(--navy);color:var(--cream);
+  padding:90px 80px 90px 130px;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.cover .meta-top{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  font-family:"JetBrains Mono",monospace;font-size:22px;
+  letter-spacing:0.08em;text-transform:uppercase;color:var(--mustard);
+}
+.cover .meta-top .left{display:flex;flex-direction:column;gap:8px;}
+.cover .meta-top .left small{color:var(--cream);opacity:0.6;font-size:18px;letter-spacing:0.18em;}
+.cover .meta-top .right{text-align:right;color:var(--cream);opacity:0.8;font-size:20px;line-height:1.4;}
+.cover .meta-top .right small{display:block;font-size:16px;opacity:0.6;margin-top:4px;letter-spacing:0.15em;}
+.cover .center{flex:1;display:flex;flex-direction:column;justify-content:center;position:relative;}
+.cover .super{
+  font-family:"JetBrains Mono",monospace;
+  font-size:26px;letter-spacing:0.4em;color:var(--mustard);
+  margin-bottom:32px;text-transform:uppercase;font-weight:500;
+}
+.cover h1{
+  font-family:"Fraunces",serif;font-weight:300;font-style:italic;
+  font-size:240px;line-height:0.9;letter-spacing:-0.04em;
+  color:var(--cream);font-variation-settings:"SOFT" 100, "WONK" 1;
+}
+.cover h1 .accent{color:var(--mustard);font-style:normal;font-weight:700;display:block;}
+.cover .korean-title{
+  margin-top:60px;font-weight:300;font-size:40px;letter-spacing:-0.01em;
+  line-height:1.4;color:var(--cream);opacity:0.9;
+}
+.cover .korean-title b{color:var(--mustard);font-weight:700;}
+.cover .deco-block{
+  position:absolute;width:120px;height:8px;background:var(--mustard);
+  top:520px;right:80px;transform:rotate(-3deg);
+}
+.cover .meta-bottom{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  border-top:1px solid rgba(232,180,58,0.35);padding-top:36px;
+}
+.cover .meta-bottom .num{
+  font-family:"Fraunces",serif;font-size:96px;font-weight:200;
+  color:var(--mustard);line-height:0.85;font-variation-settings:"SOFT" 100;
+}
+.cover .meta-bottom .num small{
+  font-size:28px;display:block;font-family:"JetBrains Mono",monospace;
+  color:var(--cream);opacity:0.6;letter-spacing:0.2em;margin-bottom:10px;font-weight:500;
+}
+.cover .meta-bottom .credits{display:flex;flex-direction:column;align-items:flex-end;gap:14px;}
+.cover .meta-bottom .instructor{
+  font-size:38px;font-weight:600;color:var(--cream);
+  letter-spacing:-0.005em;line-height:1;
+}
+.cover .meta-bottom .instructor .brand{color:var(--mustard);font-weight:700;}
+.cover .meta-bottom .instructor .sep-dot{margin:0 12px;color:var(--cream);opacity:0.4;font-weight:400;}
+.cover .meta-bottom .swipe{
+  font-family:"JetBrains Mono",monospace;font-size:18px;letter-spacing:0.3em;
+  color:var(--mustard);text-transform:uppercase;font-weight:600;
+}
+.cover .meta-bottom .swipe::before{content:"→ ";}
+
+/* WORD CARD */
+.card.word{
+  padding:80px 80px 80px 130px;
+  display:grid;grid-template-rows:auto 1fr auto;
+  background:var(--cream);position:relative;
+}
+.card.word::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(15,27,60,0.02) 0%, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(232,180,58,0.04) 0%, transparent 50%);
+}
+.word .header{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  font-family:"JetBrains Mono",monospace;font-size:18px;
+  letter-spacing:0.18em;text-transform:uppercase;color:var(--navy);opacity:0.7;
+  border-bottom:1px solid var(--navy);padding-bottom:22px;
+  position:relative;z-index:1;font-weight:500;
+}
+.word .main{
+  display:flex;flex-direction:column;justify-content:center;
+  position:relative;z-index:1;padding:40px 0;
+}
+.word .num-tag{
+  font-family:"JetBrains Mono",monospace;font-size:20px;letter-spacing:0.2em;
+  color:var(--mustard-deep);margin-bottom:28px;font-weight:600;
+}
+.word .num-tag .slash{color:var(--navy);opacity:0.4;margin:0 12px;}
+.word h2{
+  font-family:"Fraunces",serif;font-weight:300;font-style:italic;
+  line-height:0.95;letter-spacing:-0.03em;color:var(--navy);
+  font-variation-settings:"SOFT" 100, "WONK" 1;
+  margin-bottom:24px;position:relative;display:inline-block;
+}
+.word h2 .underline{
+  position:absolute;bottom:18px;left:-4px;right:-8px;height:24px;
+  background:var(--mustard);z-index:-1;transform:rotate(-1deg);opacity:0.85;
+}
+.word .pronunciation{
+  font-family:"JetBrains Mono",monospace;font-size:30px;
+  color:var(--navy);opacity:0.65;margin-bottom:18px;letter-spacing:0.02em;font-weight:400;
+}
+.word .derivatives{
+  font-family:"JetBrains Mono",monospace;font-size:18px;
+  color:var(--navy);opacity:0.55;margin-bottom:48px;
+  letter-spacing:0.02em;font-weight:400;
+  line-height:1.5;
+}
+.word .derivatives .pos{
+  color:var(--mustard-deep);font-weight:700;
+  margin-right:6px;
+}
+.word .derivatives .form{
+  font-weight:600;color:var(--navy);opacity:0.9;
+  margin-right:8px;
+}
+.word .derivatives .ko-meaning{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:18px;font-weight:400;
+}
+.word .derivatives .item + .item{
+  margin-left:14px;padding-left:14px;
+  border-left:1px solid var(--navy);
+  border-color:rgba(15,27,60,0.2);
+}
+.word .meaning{border-left:5px solid var(--mustard);padding-left:28px;margin-bottom:28px;}
+.word .meaning .ko{
+  font-weight:600;font-size:38px;line-height:1.4;
+  color:var(--navy);letter-spacing:-0.01em;margin-bottom:10px;
+}
+.word .meaning .en{
+  font-family:"Fraunces",serif;font-weight:400;font-style:italic;
+  font-size:24px;line-height:1.5;color:var(--navy);opacity:0.7;
+  font-variation-settings:"SOFT" 50;
+}
+.word .meaning + .meaning{margin-top:24px;}
+.word .meaning .index{
+  font-family:"JetBrains Mono",monospace;font-size:18px;
+  color:var(--mustard-deep);letter-spacing:0.2em;
+  margin-bottom:8px;display:inline-block;font-weight:600;
+}
+.word .example{
+  margin-top:40px;padding:32px 32px 28px;background:var(--paper);position:relative;
+}
+.word .example::before{
+  content:"EXAMPLE";position:absolute;top:-14px;left:24px;
+  background:var(--navy);color:var(--cream);
+  font-family:"JetBrains Mono",monospace;font-size:15px;letter-spacing:0.3em;
+  padding:6px 14px;font-weight:600;
+}
+.word .example p{
+  font-family:"Fraunces",serif;font-style:italic;font-weight:400;
+  font-size:28px;line-height:1.45;color:var(--navy);
+  font-variation-settings:"SOFT" 100;
+}
+.word .example p .target{background:var(--mustard);padding:0 8px;font-style:normal;font-weight:600;}
+
+.word .synonyms{
+  margin-top:32px;padding-left:28px;
+  border-left:5px solid var(--mustard);
+  border-color:rgba(232,180,58,0.4);
+  font-size:24px;
+  font-family:"Fraunces",serif;font-style:italic;font-weight:400;
+  color:var(--navy);opacity:0.8;line-height:1.5;
+}
+.word .synonyms .syn-label{
+  font-family:"JetBrains Mono",monospace;font-size:16px;
+  color:var(--mustard-deep);letter-spacing:0.3em;text-transform:uppercase;
+  font-style:normal;font-weight:700;margin-right:14px;
+  display:inline-block;
+}
+
+.word .footer{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  border-top:1px solid var(--navy);padding-top:22px;
+  position:relative;z-index:1;
+}
+.word .footer .instructor{
+  font-size:28px;font-weight:600;
+  color:var(--navy);letter-spacing:-0.005em;opacity:0.9;line-height:1;
+}
+.word .footer .instructor .brand{color:var(--mustard-deep);font-weight:700;}
+.word .footer .instructor .sep-dot{margin:0 10px;color:var(--navy);opacity:0.4;font-weight:400;}
+.word .footer .page-num{
+  font-family:"Fraunces",serif;
+  font-size:48px;font-weight:300;color:var(--navy);font-style:italic;
+  opacity:0.85;letter-spacing:-0.02em;
+}
+</style>
+</head>
+<body>
+
+<div class="card cover">
+  <div class="side-brand">
+    <div class="text">
+      <span class="accent">HACKERS</span><span class="sep">·</span>GRE VERBAL<span class="sep">·</span>DAILY VOCAB
+    </div>
+  </div>
+  <div class="meta-top">
+    <div class="left">
+      <small>거만어 데일리 / DAILY</small>
+      <span>GRE Vocabulary 3000</span>
+    </div>
+    <div class="right">
+      2026.05.03
+      <small>VOL. 002</small>
+    </div>
+  </div>
+  <div class="center">
+    <div class="super">오늘의 어휘 5</div>
+    <h1><span class="accent">today's</span><em>vocab</em></h1>
+    <div class="korean-title">
+      <b>해커스 GRE 거만어 3000</b>에서<br>
+      매일 엄선된 단어 5개
+    </div>
+    <div class="deco-block"></div>
+  </div>
+  <div class="meta-bottom">
+    <div class="num">
+      <small>VOLUME</small>
+      002
+    </div>
+    <div class="credits">
+      <div class="instructor">
+        <span class="brand">해커스 GRE 버벌</span><span class="sep-dot">·</span>송종옥
+      </div>
+      <div class="swipe">SWIPE</div>
+    </div>
+  </div>
+</div>
+
+<div class="card word">
+  <div class="side-brand">
+    <div class="text">
+      <span class="accent">HACKERS</span><span class="sep">·</span>GRE VERBAL<span class="sep">·</span>DAILY VOCAB
+    </div>
+  </div>
+  <div class="header">
+    <div class="day">DAY 01 · NO. 86</div>
+    <div class="source">거만어 v11.0</div>
+  </div>
+  <div class="main">
+    <div class="num-tag">01<span class="slash">/</span>05</div>
+    <h2 style="font-size:150px">alienate<span class="underline"></span></h2>
+    <div class="pronunciation">[éiljənèit, -liə-] · v.</div>
+    
+    
+    <div class="meaning">
+      <span class="index">MEANING 1</span>
+      <div class="ko">소원하게, 멀어지게 하다</div>
+      <div class="en">to cause to become unfriendly or hostile; estrange a. alien = strange and not familiar</div>
+    </div>
+    <div class="meaning">
+      <span class="index">MEANING 2</span>
+      <div class="ko">양도하다</div>
+      <div class="en">to transfer property or ownership</div>
+    </div>
+    
+    <div class="example">
+      <p>He <span class="target">alienated</span> most of his colleagues with his bad temper. When I first went to New York, it all felt very alien to me.</p>
+    </div>
+    <div class="synonyms"><span class="syn-label">SYN</span>estrange · distance · isolate · yield · surrender · relinquish · transfer</div>
+  </div>
+  <div class="footer">
+    <div class="instructor">
+      <span class="brand">해커스 GRE 버벌</span><span class="sep-dot">·</span>송종옥
+    </div>
+    <div class="page-num">02</div>
+  </div>
+</div>
+
+<div class="card word">
+  <div class="side-brand">
+    <div class="text">
+      <span class="accent">HACKERS</span><span class="sep">·</span>GRE VERBAL<span class="sep">·</span>DAILY VOCAB
+    </div>
+  </div>
+  <div class="header">
+    <div class="day">DAY 21 · NO. 54</div>
+    <div class="source">거만어 v11.0</div>
+  </div>
+  <div class="main">
+    <div class="num-tag">02<span class="slash">/</span>05</div>
+    <h2 style="font-size:110px">prepossessing<span class="underline"></span></h2>
+    <div class="pronunciation">[|pri:pə|zesɪŋ] · a.</div>
+    
+    
+    <div class="meaning">
+      
+      <div class="ko">매력있는</div>
+      <div class="en">attractive or appealing in appearance</div>
+    </div>
+    
+    <div class="example">
+      <p>He was not a <span class="target">prepossessing</span> sight.</p>
+    </div>
+    <div class="synonyms"><span class="syn-label">SYN</span>attractive · beautiful · fetching · charming · enchanting · captivating</div>
+  </div>
+  <div class="footer">
+    <div class="instructor">
+      <span class="brand">해커스 GRE 버벌</span><span class="sep-dot">·</span>송종옥
+    </div>
+    <div class="page-num">03</div>
+  </div>
+</div>
+
+<div class="card word">
+  <div class="side-brand">
+    <div class="text">
+      <span class="accent">HACKERS</span><span class="sep">·</span>GRE VERBAL<span class="sep">·</span>DAILY VOCAB
+    </div>
+  </div>
+  <div class="header">
+    <div class="day">DAY 13 · NO. 10</div>
+    <div class="source">거만어 v11.0</div>
+  </div>
+  <div class="main">
+    <div class="num-tag">03<span class="slash">/</span>05</div>
+    <h2 style="font-size:150px">gruesome<span class="underline"></span></h2>
+    <div class="pronunciation">[grúːsəm] · a.</div>
+    
+    
+    <div class="meaning">
+      
+      <div class="ko">소름끼치는, 오싹하는</div>
+      <div class="en">causing repulsion or horror; grisly</div>
+    </div>
+    
+    <div class="example">
+      <p><span class="target">gruesome</span> pictures of dead bodies 시체들을 찍은 섬뜩한 사진들 We spent a week in a gruesome apartment in Miami.</p>
+    </div>
+    <div class="synonyms"><span class="syn-label">SYN</span>grisly · ghastly · frightful · hideous · horrible · grim · awful · dire</div>
+  </div>
+  <div class="footer">
+    <div class="instructor">
+      <span class="brand">해커스 GRE 버벌</span><span class="sep-dot">·</span>송종옥
+    </div>
+    <div class="page-num">04</div>
+  </div>
+</div>
+
+<div class="card word">
+  <div class="side-brand">
+    <div class="text">
+      <span class="accent">HACKERS</span><span class="sep">·</span>GRE VERBAL<span class="sep">·</span>DAILY VOCAB
+    </div>
+  </div>
+  <div class="header">
+    <div class="day">DAY 16 · NO. 85</div>
+    <div class="source">거만어 v11.0</div>
+  </div>
+  <div class="main">
+    <div class="num-tag">04<span class="slash">/</span>05</div>
+    <h2 style="font-size:170px">leaning<span class="underline"></span></h2>
+    <div class="pronunciation">[líːniŋ] · n.</div>
+    
+    
+    <div class="meaning">
+      
+      <div class="ko">성향</div>
+      <div class="en">a tendency or partiality of a particular kind</div>
+    </div>
+    
+    <div class="example">
+      <p>leftist-<span class="target">leaning</span> 좌편향적인 a leaning toward pacifism 평화주의 경향</p>
+    </div>
+    <div class="synonyms"><span class="syn-label">SYN</span>inclination · tendency · bent · proclivity · propensity · penchant</div>
+  </div>
+  <div class="footer">
+    <div class="instructor">
+      <span class="brand">해커스 GRE 버벌</span><span class="sep-dot">·</span>송종옥
+    </div>
+    <div class="page-num">05</div>
+  </div>
+</div>
+
+<div class="card word">
+  <div class="side-brand">
+    <div class="text">
+      <span class="accent">HACKERS</span><span class="sep">·</span>GRE VERBAL<span class="sep">·</span>DAILY VOCAB
+    </div>
+  </div>
+  <div class="header">
+    <div class="day">DAY 16 · NO. 52</div>
+    <div class="source">거만어 v11.0</div>
+  </div>
+  <div class="main">
+    <div class="num-tag">05<span class="slash">/</span>05</div>
+    <h2 style="font-size:110px">juxtaposition<span class="underline"></span></h2>
+    <div class="pronunciation">[dƷʌ̀k stəpəzíʃən] · n.</div>
+    
+    
+    <div class="meaning">
+      
+      <div class="ko">병렬, 병치</div>
+      <div class="en">the act or instance of two contrasting objects, images, or ideas in placing together or describing together, so that the differences between them are emphasized</div>
+    </div>
+    
+    <div class="example">
+      <p>The <span class="target">juxtaposition</span> of nature and man was vital.</p>
+    </div>
+    <div class="synonyms"><span class="syn-label">SYN</span>abutment · contact · nearness · proximity · touching</div>
+  </div>
+  <div class="footer">
+    <div class="instructor">
+      <span class="brand">해커스 GRE 버벌</span><span class="sep-dot">·</span>송종옥
+    </div>
+    <div class="page-num">06</div>
+  </div>
+</div>
+
+</body>
+</html>
